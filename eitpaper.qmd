@@ -3,25 +3,40 @@ title: "Evaluation of the influence of LPR data errors on the outputs of ITS"
 author: "Eva Hajčiarová"
 format: html
 editor: visual
+number-sections: true
 ---
 
-# Evaluation of the influence of LPR data errors on the outputs of ITS
+# Abstract
 
 *Abstract - mindmap*
 
 This is a mindmap of the proposed paper (@fig-1):
 
+<!-- TODO: add content -->
+
 ![Mindmap of the paper](images/EITcourse-mindmap.png){#fig-1 width="1000"}
 
-## Introduction {#sec-intro}
+# Introduction {#sec-intro}
 
+```{r}
+#| sec-cap: This is a section
+```
 
+<!-- TODO: add content -->
 
-## Literature background
+# Literature background {#sec-literature}
 
-## Methodology
+<!-- TODO: add content -->
 
-## Results
+# Methodology {#sec-methods}
+
+<!-- TODO: add content -->
+
+In this section, the methods used are described. For the results, please see the Results section (@sec-results).
+
+# Results {#sec-results}
+
+<!-- TODO: add content -->
 
 This is an equation: $$q = k * v$$
 
@@ -34,28 +49,22 @@ Here is the plot (@fig-Plot1)
 plot(1:9)
 ```
 
+# Discussion {#sec-discussion}
 
+<!-- TODO: add content -->
 
-## Discussion
+# Conclusions {#sec-conclusions}
 
-## Coclusions
+<!-- TODO: add content -->
 
-## References
+# References {#sec-references}
 
-
-
-
-
-
-
-
+<!-- TODO: add content -->
 
 ```{r}
 #| echo: false
 2 * 2
 ```
-
-
 
 ```{r}
 #| echo: true
