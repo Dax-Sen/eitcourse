@@ -41,4 +41,6 @@ b
 a <- 2
 ```
 
-![Picture](images/20240622_173409.jpg){width="3000"}
+This is a picture from Vienna:
+
+![Picture Vienna](images/20240622_173409.jpg){width="3000"}
