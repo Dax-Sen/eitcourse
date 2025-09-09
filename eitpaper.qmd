@@ -18,10 +18,6 @@ This is a mindmap of the proposed paper (@fig-1):
 
 # Introduction {#sec-intro}
 
-```{r}
-#| sec-cap: This is a section
-```
-
 <!-- TODO: add content -->
 
 # Literature background {#sec-literature}
@@ -40,13 +36,81 @@ In this section, the methods used are described. For the results, please see the
 
 This is an equation: $$q = k * v$$
 
-Here is the plot (@fig-Plot1)
+Here is the plot (@fig-Plot1) (@fig-Plot2)
 
 ```{r}
 #| echo: false
 #| label: fig-Plot1
-#| fig-cap: This is a plot.
+#| fig-cap: This is a plot 1.
 plot(1:9)
+```
+
+```{r}
+#| echo: false
+
+library(leaflet)
+library(ggplot2)
+library(dplyr)
+library(stringr)
+library(hms)
+
+rm(list = ls())
+options(digits.secs=9)
+
+##############################################################################################################
+##############################################################################################################
+
+lokace <- "C:/Users/Mr. Spock/Documents/GitHub/eitcourse/"                                       #Základní lokace, kde budou umístěny složky s vyhodnocením
+csv <- ".csv"
+soubor <- "B1D2_Relace-pro-hodnoceni-Tlim"
+cesta <- paste(lokace,"/",soubor,csv,sep = "")
+
+data <- read.csv(cesta, sep = ";", encoding = "UTF-8")
+med <- as.numeric(data[268,5])
+Tlim <- as.numeric(data[270,5])
+medhod <- round(med/60,1)
+medp <- paste("median =",as.character(medhod),"min         ")
+Tlimhod <- round(Tlim/60,1)
+Tlimp <- paste("Tlim =",as.character(Tlimhod),"min         ")
+
+i <- 30
+j <- as.numeric(round(length(data$CasovyRozdil..s.[1:267])/i))
+
+data$CasProfil1a <- NA
+data$CasProfil1a[1:267] <- parse_hms(data$CasProfil1[1:267])
+data$CasProfil1a <- as_hms(data$CasProfil1a)
+
+osaX <- hms::as_hms(seq(as.numeric(hms::hms(hours = 8, minutes = 10)), as.numeric(hms::hms(hours = 9, minutes = 10)), by = as.numeric(hms::hms(minutes = 5 ))))
+
+##Tvorba grafů, výpočet a uložení mediánu a T_lim
+nazev <- "Time difference of pairs of records"
+ 
+  
+  graf <- ggplot(data[1:267,], aes(x = CasProfil1a[1:267] ,y=as.numeric(CasovyRozdil..s.[1:267]))) + geom_point(shape=3, color = "gray45") +
+    ggtitle(nazev) +
+    labs(x="Record time in first measuring profile [HH:MM:SS]", y="Time difference [s]") +
+    scale_y_continuous(expand = expansion(mult = 0, add = 0), limits = c(0,350),breaks = c((seq(0, 350, by = 50)), med, Tlim), labels = c((seq(0, 350, by = 50)), medp, Tlimp))+ 
+    scale_x_time(expand = expansion(mult = c(0.1,0.12), add = 0), breaks = osaX)+
+    theme_light()+
+    theme(
+      panel.border =  element_rect(linetype = "solid", fill = NA, color = "gray80"),
+      panel.grid.major = element_line(colour = "gray80"),
+      panel.grid.minor = element_line(colour="transparent"),
+      plot.title=element_text(size=14, lineheight=1, color= 1, hjust=0.5),
+      axis.title.x=element_text(color=1, margin = margin(t = 10)),
+      axis.text.x=element_text(color="black",angle = 90, vjust = 0.5),
+      axis.title.y=element_text(color=1))+
+    geom_hline(yintercept=as.numeric(med),linetype = "longdash",color = "black", linewidth = 1 )+
+    geom_hline(yintercept=as.numeric(Tlim),linetype = "longdash",color = "black", linewidth = 1 )
+
+ 
+  print(graf)  
+#| label: fig-Plot2
+#| fig-cap: This is a plot 2.
+
+
+
+
 ```
 
 # Discussion {#sec-discussion}
