@@ -10,7 +10,9 @@ number-sections: true
 
 *Abstract - mindmap*
 
+
 This is a mindmap of the proposed paper (@fig-1):
+
 
 <!-- TODO: add content -->
 
@@ -125,15 +127,5 @@ nazev <- "Time difference of pairs of records"
 
 <!-- TODO: add content -->
 
-```{r}
-#| echo: false
-2 * 2
-```
 
-```{r}
-#| echo: true
 
-b <- 2
-b
-a <- 2
-```
