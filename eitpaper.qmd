@@ -60,14 +60,14 @@ options(digits.secs=9)
 ##############################################################################################################
 ##############################################################################################################
 
-lokace <- "C:/Users/Mr. Spock/Documents/GitHub/eitcourse/"                                       #Základní lokace, kde budou umístěny složky s vyhodnocením
+lokace <- "C:/Users/Mr. Spock/Documents/"                                       #Základní lokace, kde budou umístěny složky s vyhodnocením
 csv <- ".csv"
 soubor <- "B1D2_Relace-pro-hodnoceni-Tlim"
 cesta <- paste(lokace,"/",soubor,csv,sep = "")
 
 data <- read.csv(cesta, sep = ";", encoding = "UTF-8")
-med <- as.numeric(data[268,5])
-Tlim <- as.numeric(data[270,5])
+med <- as.numeric(data[268,4])
+Tlim <- as.numeric(data[270,4])
 medhod <- round(med/60,1)
 medp <- paste("median =",as.character(medhod),"min         ")
 Tlimhod <- round(Tlim/60,1)
