@@ -25,6 +25,8 @@ This is a mindmap of the proposed paper (@fig-1):
 
 <!--# TODO: add content -->
 
+<!-- TODO: add content -->
+
 ![Mindmap of the paper](images/EITcourse-mindmap.png){#fig-1}
 
 # Introduction {#sec-intro}
