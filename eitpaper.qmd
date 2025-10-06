@@ -1,7 +1,18 @@
 ---
 title: "Evaluation of the influence of LPR data errors on the outputs of ITS"
-author: "Eva Hajčiarová"
+author:
+  - name: "Eva Hajčiarová"
+keywords: LPR data
+abstract: 
+  This is an abstract.
+date: last-modified  
+#bibliography: references.bib
+citation:
+  container-title: Earth and Space Science
+
 format: html
+
+
 editor: visual
 number-sections: true
 ---
@@ -12,27 +23,27 @@ number-sections: true
 
 This is a mindmap of the proposed paper (@fig-1):
 
-<!-- TODO: add content -->
+<!--# TODO: add content -->
 
-![Mindmap of the paper](images/EITcourse-mindmap.png){#fig-1 width="1000"}
+![Mindmap of the paper](images/EITcourse-mindmap.png){#fig-1}
 
 # Introduction {#sec-intro}
 
-<!-- TODO: add content -->
+<!--# TODO: add content -->
 
 # Literature background {#sec-literature}
 
-<!-- TODO: add content -->
+<!--# TODO: add content -->
 
 # Methodology {#sec-methods}
 
-<!-- TODO: add content -->
+<!--# TODO: add content -->
 
 In this section, the methods used are described. For the results, please see the Results section (@sec-results).
 
 # Results {#sec-results}
 
-<!-- TODO: add content -->
+<!--# TODO: add content -->
 
 This is an equation: $$q = k * v$$
 
@@ -47,6 +58,10 @@ plot(1:9)
 
 ```{r}
 #| echo: false
+#| message: false
+#| label: fig-Plot2
+#| fig-cap: This is a plot 2.
+
 
 library(leaflet)
 library(ggplot2)
@@ -60,7 +75,7 @@ options(digits.secs=9)
 ##############################################################################################################
 ##############################################################################################################
 
-lokace <- "C:/Users/Mr. Spock/Documents/"                                       #Základní lokace, kde budou umístěny složky s vyhodnocením
+lokace <- "C:/Users/Mr. Spock/Documents/GitHub/eitcourse/"                                       #Základní lokace, kde budou umístěny složky s vyhodnocením
 csv <- ".csv"
 soubor <- "B1D2_Relace-pro-hodnoceni-Tlim"
 cesta <- paste(lokace,"/",soubor,csv,sep = "")
@@ -105,35 +120,31 @@ nazev <- "Time difference of pairs of records"
 
  
   print(graf)  
-#| label: fig-Plot2
-#| fig-cap: This is a plot 2.
+
 
 
 
 
 ```
+
+Results are presented at @table-Table1
+
+| Col1 | Col2 | Col3 |
+|:-----|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+: Table 1 {#table-Table1}
 
 # Discussion {#sec-discussion}
 
-<!-- TODO: add content -->
+<!--# TODO: add content -->
 
 # Conclusions {#sec-conclusions}
 
-<!-- TODO: add content -->
+<!--# TODO: add content -->
 
 # References {#sec-references}
 
-<!-- TODO: add content -->
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-```{r}
-#| echo: true
-
-b <- 2
-b
-a <- 2
-```
+<!--# TODO: add content -->
